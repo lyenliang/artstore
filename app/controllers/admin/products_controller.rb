@@ -53,6 +53,7 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
+    # ":id" refers to the id column in "photos" table, not product_id table
     params.require(:product).permit(:title, :description, :quantity, :price, photo_attributes: [:image, :id])
   end
 end
