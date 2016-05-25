@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'byebug'
+
 gem 'aasm'
 
 gem 'mini_magick'
