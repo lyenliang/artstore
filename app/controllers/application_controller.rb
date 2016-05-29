@@ -19,17 +19,20 @@ class ApplicationController < ActionController::Base
   private 
   
   def find_cart
+    logger.debug "session[:cart_id] at the beginning: #{session[:cart_id]}"
     cart = Cart.find_by(id: session[:cart_id])
+
+    flag = false
     
     unless cart.present?
       cart = Cart.create
-      # Can I put "session[:cart_id] = cart.id" here?
+      flag = true
     end
     
     logger.debug "cart.id: #{cart.id}"
     logger.debug "session[:cart_id]: #{session[:cart_id]}"
-    if (cart.id != session[:cart_id]) 
-      logger.debug "difference found"
+    if (cart.id != session[:cart_id] && flag == false) 
+      logger.debug "difference found, flag: #{flag}"
     end
     session[:cart_id] = cart.id
     
