@@ -15,6 +15,11 @@ u.password_confirmation = "12345678" # 最少要八碼
 u.is_admin = true
 u.save
 
+create_users = for i in 1..9 do
+  User.create!([email: "user#{i}@test.com", password: "12345678", 
+    password_confirmation: "12345678", is_admin: false])
+end
+
 # 建立二筆商品資料
 
 product = Product.new
