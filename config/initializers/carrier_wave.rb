@@ -7,7 +7,7 @@ CarrierWave.configure do |config|
       aws_secret_access_key:  ENV['aws_secret_access_key'],
       region:                 'ap-southeast-1'
     }
-    config.fog_directory = 'xxxx'
+    config.fog_directory = 'bbb3'
   else
     config.storage :file
   end
