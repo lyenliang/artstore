@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+gem "fog"
+
 gem "figaro"
 
 gem "letter_opener", group: :development
